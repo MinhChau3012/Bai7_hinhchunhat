@@ -17,26 +17,16 @@ namespace Bai7_hinhchunhat
             InitializeComponent();
         }
 
-        private void btnDt_Click(object sender, EventArgs e)
+        private void btnTinh_Click(object sender, EventArgs e)
         {
-            double dai, rong, dientich;
-
-            dai = Convert.ToDouble(txtDAI.Text);
-
-            rong = Convert.ToDouble(txtRong.Text);
-            double s = dai * rong;
-            txtKq.Text=s.ToString();
+            double chieudai = double.Parse(txtDAI.Text);
+            double chieurong = double.Parse(txtRong.Text);
+            lblKQ.Text = "- Diện Tích  :"+ dientich(chieudai, chieurong)+"\n- Chu Vi :" + chuvi(chieudai, chieurong);
         }
+        double dientich(double chieudai, double chieurong) { return chieudai * chieurong; }
+        double chuvi(double chieudai, double chieurong) { return (chieudai + chieurong) * 2; }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            double dai, rong, chuvi;
-
-            dai = Convert.ToDouble(txtDAI.Text);
-
-            rong = Convert.ToDouble(txtRong.Text);
-            double p = (dai + rong) * 2;
-            txtKq.Text = p.ToString();
-        }
+       
     }
+
 }
